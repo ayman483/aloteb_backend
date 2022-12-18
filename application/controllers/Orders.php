@@ -64,7 +64,7 @@ class Orders extends CI_Controller
 			$this->db->update("orders", $data, $where);
 			$this->log_->add_activity($user->id,'update_itme','orders',$id);
 		} else {
-			$order_id = $this->db->insert("orders", $data);
+			$this->db->insert("orders", $data);
 			$this->log_->add_activity($user->id,'add_item','orders',$this->db->insert_id());
 		}
 		die(json_encode('added order succssfull'));
